@@ -18,33 +18,35 @@
         app:layout_constraintVertical_bias="0.39"
         app:srcCompat="@drawable/logo" />
 
+
     <EditText
         android:id="@+id/email_et"
         android:layout_width="341dp"
         android:layout_height="47dp"
         android:ems="10"
         android:hint="E-mail "
+        android:autofillHints="E-mail"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.233" />
-
+        app:layout_constraintVertical_bias="0.25" />
 
     <EditText
         android:id="@+id/password_et"
-        android:layout_width="335dp"
+        android:layout_width="341dp"
         android:layout_height="44dp"
         android:ems="10"
         android:hint="Password"
+        android:autofillHints="Password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_et"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintVertical_bias="0.108" />
 
     <Button
         android:id="@+id/login_bn"
@@ -53,7 +55,7 @@
         android:backgroundTint="@color/blue"
         android:text="Login"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -67,31 +69,29 @@
         android:layout_width="184dp"
         android:layout_height="21dp"
         android:text="Forgot Password?"
+        android:textAlignment="center"
         android:textColor="@color/blue"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.629"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_bn"
         app:layout_constraintVertical_bias="0.13" />
 
     <TextView
         android:id="@+id/signup_tv"
-        android:layout_width="169dp"
-        android:layout_height="21dp"
+        android:layout_width="199dp"
+        android:layout_height="29dp"
         android:text="Create a new Account"
         android:textColor="@color/blue"
-        android:textSize="16dp"
+        android:textSize="16sp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword_tv"
-        app:layout_constraintVertical_bias="0.051"
-        />
-
-
-
+        app:layout_constraintVertical_bias="0.051" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
