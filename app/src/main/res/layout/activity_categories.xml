@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -12,104 +12,70 @@
     tools:context=".CategoriesActivity"
     android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="CATEGORIES"
-            android:fontFamily="sans-serif-smallcaps"
-            android:textSize="20sp"
-            android:padding="@android:dimen/dialog_min_width_major"/>
-
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
+
+            <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Clothes"/>
+            android:text="Categories"
+            android:textSize="30sp"
+            android:fontFamily="sans-serif-smallcaps"/>
+
+        </RelativeLayout>
+
+
+
+
         <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/spin_clothes"
-            android:entries="@array/Clothes"/>
-        </LinearLayout>
+            android:entries="@array/Clothes"
+            android:layout_weight="1"
+            />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Footwear"/>
 
         <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/spin_Footwear"
-            android:entries="@array/Footwear"/>
-    </LinearLayout>
+            android:entries="@array/Footwear"
+            android:layout_weight="1"/>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Accessories"/>
 
         <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/spin_accessories"
-            android:entries="@array/Accessories"/>
-    </LinearLayout>
+            android:entries="@array/Accessories"
+            android:layout_weight="1"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Books"/>
+
 
         <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/spin_books"
-            android:entries="@array/Books"/>
-    </LinearLayout>
+            android:entries="@array/Books"
+            android:layout_weight="1"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gadgets"/>
 
         <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/spin_gadgets"
-            android:entries="@array/Gadgets"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Automobiles"/>
+            android:entries="@array/Gadgets"
+            android:layout_weight="1"/>
 
         <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/spin_automobiles"
-            android:entries="@array/Automobiles"/>
+            android:entries="@array/Automobiles"
+            android:layout_weight="1"/>
 
-    </LinearLayout>
 
 
     </LinearLayout>

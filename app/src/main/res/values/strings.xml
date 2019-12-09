@@ -55,7 +55,7 @@
         <item> Hats and Caps</item>
         <item>Goggles</item>
         <item>Watches</item>
-        <item >Bags</item>
+        <item>Bags</item>
         <item>Jewellery"></item>
         <item>MakeUp items</item>
         <item>Others</item>
@@ -71,10 +71,13 @@
     </string-array>
 
     <string-array name="Automobiles">
-    <item>Bicycles</item>
-    <item>Scooties and Activas</item>
-    <item>Cars</item>
+        <item>Bicycles</item>
+        <item>Scooties and Activas</item>
+        <item>Cars</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
 
 

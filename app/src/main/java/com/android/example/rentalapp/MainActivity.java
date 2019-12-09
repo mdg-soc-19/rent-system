@@ -2,11 +2,14 @@ package com.android.example.rentalapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -14,7 +17,9 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
+    //private FirebaseAuth.AuthStateListener authStateListener;
     private Button logout, GiveOnRent, TakeOnRent;
+
 
 
     @Override
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null) {
             // User is logged in
+            Toast.makeText(MainActivity.this, "You're now signed in. Welcome to rentalApp", Toast.LENGTH_SHORT).show();
         }
 
         logout = (Button) findViewById(R.id.logout_bn);
@@ -54,7 +60,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
+
+
 }
+
+

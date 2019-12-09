@@ -2,14 +2,16 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:context=".MainActivity"
     android:orientation="vertical">
+
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -21,49 +23,48 @@
             android:backgroundTint="@color/blue"
             android:text="@string/btn_sign_out"
             android:textColor="@color/white"
-            android:layout_alignParentRight="true"/>
-
-
-        <ImageView
-            android:id="@+id/logo_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="37dp"
-            android:layout_marginLeft="42dp"
-            android:layout_marginTop="72dp"
-            android:layout_marginEnd="37dp"
-            android:layout_marginRight="31dp"
-            android:layout_marginBottom="54dp"
-            app:srcCompat="@drawable/logo" />
+        android:layout_marginBottom="30dp"
+        />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/logo_iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        app:srcCompat="@drawable/logo" />
 
     </RelativeLayout>
 
     <Button
         android:id="@+id/takeOnRent_bn"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:backgroundTint="@color/blue"
         android:text="TAKE ON RENT"
+        android:textSize="20sp"
         android:textColor="@color/white"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="72dp"
-
-        />
+        android:layout_gravity="center_horizontal"
+        android:onClick="TakeOnRent"/>
 
     <Button
         android:id="@+id/giveOnRent_bn"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginVertical="72dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:backgroundTint="@color/blue"
         android:text="GIVE ON RENT"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:textColor="@color/white" />
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="GiveOnRent"/>
 
 
 </LinearLayout>
