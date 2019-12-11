@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null) {
             // User is logged in
-            Toast.makeText(MainActivity.this, "You're now signed in. Welcome to rentalApp", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "You're now logged in. Welcome to rentalApp!", Toast.LENGTH_SHORT).show();
         }
 
         logout = (Button) findViewById(R.id.logout_bn);

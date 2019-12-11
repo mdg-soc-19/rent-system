@@ -76,7 +76,12 @@
             android:entries="@array/Automobiles"
             android:layout_weight="1"/>
 
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose the required category"
+            android:layout_marginTop="30dp"
+            android:textSize="20dp"/>
 
     </LinearLayout>
 </ScrollView>

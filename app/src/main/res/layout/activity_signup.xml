@@ -19,7 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:paddingTop="@dimen/fui_auth_method_button_margin"
         android:layout_marginBottom="20dp"
         android:textAlignment="center"
         android:textColor="@color/blue"
@@ -40,7 +39,16 @@
 
 </RelativeLayout>
 
-        <EditText
+    <EditText
+        android:id="@+id/username_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:layout_marginTop="20dp" />
+
+
+    <EditText
         android:id="@+id/email_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,10 +65,27 @@
         android:inputType="textPassword"
         android:layout_marginBottom="20dp"/>
 
-<RelativeLayout
+    <EditText
+        android:id="@+id/city_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City"
+        android:inputType="text"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/phone_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contact No."
+        android:inputType="phone" />
+
+
+
+    <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="40dp">
+    android:layout_marginTop="20dp">
 
     <Button
         android:id="@+id/signup_bn"
