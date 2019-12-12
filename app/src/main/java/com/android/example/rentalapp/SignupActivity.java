@@ -22,6 +22,7 @@
     import com.google.firebase.auth.FirebaseAuth;
     import com.google.firebase.firestore.DocumentReference;
     import com.google.firebase.firestore.FirebaseFirestore;
+    import com.google.firebase.firestore.FirebaseFirestoreSettings;
 
     import java.util.HashMap;
     import java.util.Map;
@@ -31,8 +32,9 @@
         private FirebaseAuth auth;
         private  EditText username, email, password, city, contactNo;
         private Button signup;
-        FirebaseFirestore fStore;
-        String userID;
+        private  FirebaseFirestore fStore;
+        private String userID;
+        private static final String TAG = "This database: ";
 
 
          @Override
@@ -42,6 +44,12 @@
 
             auth = FirebaseAuth.getInstance();
             fStore = FirebaseFirestore.getInstance();
+
+             FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+                     .setTimestampsInSnapshotsEnabled(true)
+                     .build();
+             fStore.setFirestoreSettings(settings);
+
             username = (EditText) findViewById(R.id.username_et);
             email = (EditText) findViewById(R.id.email_et);
             password = (EditText) findViewById(R.id.password_et);
@@ -104,8 +112,8 @@
 
                                         if (task.isSuccessful()) {
                                             Toast.makeText(SignupActivity.this, "Account created successfully", Toast.LENGTH_SHORT).show();
-                                            DocumentReference documentReference = fStore.collection("users").document(userID);
                                             userID = auth.getCurrentUser().getUid();
+                                            DocumentReference documentReference = fStore.collection("users").document(userID);
                                             Map<String, Object> user = new HashMap<>();
                                             user.put("Name", Username);
                                             user.put("Email", Email);
@@ -114,10 +122,11 @@
                                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
-
+                                                    Log.d(TAG, "user created");
                                                 }
                                             });
                                             startActivity(new Intent(SignupActivity.this, MainActivity .class));
+
                                         }
                                         else {
                                             Toast.makeText(SignupActivity.this, "Authentication failed." + task.getException(),
