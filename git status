@@ -1,0 +1,48 @@
+[33mcommit 87d102681a5424d244a22896ff3f92e8f094a734[m[33m ([m[1;36mHEAD -> [m[1;32mlogin-signup[m[33m)[m
+Merge: 23baa86 37e7df9
+Author: Ankita <ankitapareek2000@gmail.com>
+Date:   Tue Dec 10 00:03:09 2019 +0530
+
+    Initial merge
+
+[33mcommit 23baa86a8752f48d3337e029846808176b8301e2[m[33m ([m[1;31morigin/login-signup[m[33m)[m
+Author: Ankita <ankitapareek2000@gmail.com>
+Date:   Mon Dec 9 23:33:59 2019 +0530
+
+    Login signup completed along with backend and categories created
+
+[33mcommit 45134c23505a4b534b54de8bf2e67b0b604dbb00[m
+Author: Ankita <ankitapareek2000@gmail.com>
+Date:   Sun Dec 8 15:18:52 2019 +0530
+
+    categories added
+
+[33mcommit b818af21d3cd4ccaeceaaa86f7067d067bebf021[m
+Author: Ankita <ankitapareek2000@gmail.com>
+Date:   Sun Dec 8 14:20:25 2019 +0530
+
+    Categories added
+
+[33mcommit 163d1ae060f0eb9b2e27f6481defaa7753edbd8c[m
+Author: Ankita <ankitapareek2000@gmail.com>
+Date:   Fri Dec 6 22:34:02 2019 +0530
+
+    Project initialise
+
+[33mcommit 9869b8571f2f1928ad39fdea48e9c0d149cbf85d[m
+Author: Ankita <ankitapareek2000@gmail.com>
+Date:   Fri Dec 6 21:47:05 2019 +0530
+
+    Project initialise
+
+[33mcommit 549b1a80475ab301a5129d370e879e83903e26b1[m[33m ([m[1;32mmaster[m[33m)[m
+Author: Ankita <ankitapareek2000@gmail.com>
+Date:   Fri Dec 6 19:01:08 2019 +0530
+
+    login-signup
+
+[33mcommit 37e7df95b98bb59240c5f5fa831768ec804b022f[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Arnesh Agrawal <arnesh07@gmail.com>
+Date:   Wed Dec 4 11:27:13 2019 +0530
+
+    Initial commit

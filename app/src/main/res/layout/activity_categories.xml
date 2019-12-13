@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CategoriesActivity"
+    android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Categories"
+            android:textSize="30sp"
+            android:fontFamily="sans-serif-smallcaps"/>
+
+        </RelativeLayout>
+
+
+
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/spin_clothes"
+            android:entries="@array/Clothes"
+            android:layout_weight="1"
+            />
+
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/spin_Footwear"
+            android:entries="@array/Footwear"
+            android:layout_weight="1"/>
+
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/spin_accessories"
+            android:entries="@array/Accessories"
+            android:layout_weight="1"/>
+
+
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/spin_books"
+            android:entries="@array/Books"
+            android:layout_weight="1"/>
+
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/spin_gadgets"
+            android:entries="@array/Gadgets"
+            android:layout_weight="1"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/spin_automobiles"
+            android:entries="@array/Automobiles"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose the required category"
+            android:layout_marginTop="30dp"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+</ScrollView>
