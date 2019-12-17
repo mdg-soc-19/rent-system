@@ -26,8 +26,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:scrollbars="vertical">
+        android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
@@ -43,8 +42,10 @@
             android:backgroundTint="@color/blue"
             android:text="@string/btn_sign_out"
             android:textColor="@color/white"
-            android:layout_gravity="right"
-            android:layout_marginBottom="30dp"/>
+            android:layout_gravity="end"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"/>
 
         <ImageView
             android:id="@+id/imageView"

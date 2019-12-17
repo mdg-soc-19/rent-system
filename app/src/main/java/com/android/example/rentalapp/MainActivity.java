@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         GiveOnRent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CategoriesActivity.class));
+                startActivity(new Intent(MainActivity.this, GiveOnRentActivity.class));
             }
         });
 
@@ -85,27 +85,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
-            case R.id.nav_home:
-            Toast.makeText(MainActivity.this, "Home Selected", Toast.LENGTH_SHORT).show();
-            break;
 
             case R.id.nav_profile:
                 Toast.makeText(MainActivity.this, "Profile Selected", Toast.LENGTH_SHORT).show();
-                break;
+                //break;
 
             case R.id.nav_help:
                 Toast.makeText(MainActivity.this, "Help Selected", Toast.LENGTH_SHORT).show();
-                break;
+                //break;
 
             case R.id.nav_settings:
                 Toast.makeText(MainActivity.this, "Settings Selected", Toast.LENGTH_SHORT).show();
-                break;
+                //break;
 
             case R.id.nav_signout:
                 Toast.makeText(MainActivity.this, "Signout Selected", Toast.LENGTH_SHORT).show();
-                break;
+                //break;
         }
-        return false;
+        return true;
     }
 }
 

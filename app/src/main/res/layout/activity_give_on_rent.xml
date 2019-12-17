@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GiveOnRentActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/product_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Product Details:"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/choose_bn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Image"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"/>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/product_iv"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+
+
+        <EditText
+            android:id="@+id/product_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name of product"
+            android:inputType="textPersonName" />
+
+
+        <EditText
+            android:id="@+id/rental_price_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rental Price (INR)"
+            android:inputType="numberSigned"/>
+
+        <EditText
+        android:id="@+id/security_cost_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Security Cost (INR)"
+        android:inputType="numberSigned"/>
+
+        <EditText
+        android:id="@+id/availability_duration_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Availability Duration (days)"
+        android:inputType="time"/>
+
+        <EditText
+        android:id="@+id/description_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Description (optional)"
+        android:inputType="textMultiLine"/>
+
+
+    <Button
+        android:id="@+id/upload_bn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/white"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"/>
+
+
+
+</LinearLayout>
