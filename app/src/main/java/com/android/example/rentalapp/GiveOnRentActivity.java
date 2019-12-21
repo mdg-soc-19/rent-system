@@ -142,7 +142,7 @@
             availabilityDuration.requestFocus();
         }
 
-
+        final String CategoryName = getIntent().getExtras().get("Category").toString();
         final StorageReference myRef;
         final String imageID = UUID.randomUUID().toString();
         myRef = storageReference.child("images/" + imageID);
@@ -166,7 +166,7 @@
                                 product.put("Availability duration (days)", AvailabilityDuration);
                                 product.put("Description", Description);
                                 product.put("User ID", FirebaseAuth.getInstance().getCurrentUser().getUid());
-
+                                product.put("Category", CategoryName);
                                 documentReference.set(product).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {

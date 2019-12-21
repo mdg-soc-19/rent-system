@@ -1,6 +1,7 @@
 package com.android.example.rentalapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
     Toolbar toolbar;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
 
 
@@ -53,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         GiveOnRent =  findViewById(R.id.giveOnRent_bn);
         TakeOnRent =  findViewById(R.id.takeOnRent_bn);
 
+         //sharedPreferences = getSharedPreferences("Button clicked", MODE_PRIVATE);
+         //editor = sharedPreferences.edit();
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         GiveOnRent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, GiveOnRentActivity.class));
+                startActivity(new Intent(MainActivity.this, CategoriesActivity.class));
             }
         });
 
