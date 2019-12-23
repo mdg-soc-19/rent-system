@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -18,6 +19,9 @@ public class CategoriesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
+
+        //SharedPreferences preferences = getSharedPreferences("buttonChoice", MODE_PRIVATE);
+
 
         ArrayList<CategoryItem> categoryItemList = new ArrayList<>();
         categoryItemList.add(new CategoryItem(R.drawable.clothes, "Apparels"));

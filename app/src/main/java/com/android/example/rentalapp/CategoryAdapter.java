@@ -1,6 +1,8 @@
 package com.android.example.rentalapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
     private ArrayList<CategoryItem> mCategoryList;
+
 
     public static class CategoryViewHolder extends RecyclerView.ViewHolder{
 
@@ -23,33 +28,48 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         public TextView mTextView;
 
 
+
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemView.setOnClickListener(new View.OnClickListener() {
+
+
+                    itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(v.getContext(),GiveOnRentActivity.class);
-                    {
-                         if(getAdapterPosition()== 0)
-                        i.putExtra("Category", "Apparels");
 
-                    else if (getAdapterPosition() == 1)
-                        i.putExtra("Category", "Footwear");
+                    SharedPreferences preferences = v.getContext().getSharedPreferences("buttonChoice", Context.MODE_PRIVATE);
 
-                    else if (getAdapterPosition() == 2)
-                        i.putExtra("Category", "Accessories");
+                    if (preferences.getBoolean("ChosenButton", true)) {
 
-                    else if (getAdapterPosition() == 3)
-                        i.putExtra("Category", "Books");
+                        Intent i = new Intent(v.getContext(), GiveOnRentActivity.class);
+                        {
+                            if (getAdapterPosition() == 0)
+                                i.putExtra("Category", "Apparels");
 
-                    else if (getAdapterPosition() == 4)
-                        i.putExtra("Category", "Gadgets");
+                            else if (getAdapterPosition() == 1)
+                                i.putExtra("Category", "Footwear");
 
-                    else if (getAdapterPosition() == 5)
-                        i.putExtra("Category", "Automobiles");
+                            else if (getAdapterPosition() == 2)
+                                i.putExtra("Category", "Accessories");
+
+                            else if (getAdapterPosition() == 3)
+                                i.putExtra("Category", "Books");
+
+                            else if (getAdapterPosition() == 4)
+                                i.putExtra("Category", "Gadgets");
+
+                            else if (getAdapterPosition() == 5)
+                                i.putExtra("Category", "Automobiles");
+                        }
+                        v.getContext().startActivity(i);
                     }
-                    v.getContext().startActivity(i);
+
+                     else {
+                        Intent i = new Intent(v.getContext(), TakeOnRentActivity.class);
+                         v.getContext().startActivity(i);
+                    }
                 }
+
             });
             mImageView = itemView.findViewById(R.id.imageView);
             mTextView = itemView.findViewById(R.id.textView);

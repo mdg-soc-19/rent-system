@@ -1,8 +1,10 @@
 package com.android.example.rentalapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -25,10 +27,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
     Toolbar toolbar;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
-
-
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,25 +51,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(MainActivity.this, "You're now logged in. Welcome to rentalApp!", Toast.LENGTH_SHORT).show();
         }
 
+         String ChosenButton = "Choose Button" ;
+
         logout =  findViewById(R.id.logout_bn);
         GiveOnRent =  findViewById(R.id.giveOnRent_bn);
         TakeOnRent =  findViewById(R.id.takeOnRent_bn);
 
-         //sharedPreferences = getSharedPreferences("Button clicked", MODE_PRIVATE);
-         //editor = sharedPreferences.edit();
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 auth.signOut();
                 finish();
             }
         });
 
+
+
         GiveOnRent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                preferences = getSharedPreferences("buttonChoice", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit().putBoolean("ChosenButton", true);
+                editor.apply();
                 startActivity(new Intent(MainActivity.this, CategoriesActivity.class));
             }
         });
@@ -78,6 +84,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TakeOnRent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                preferences = getSharedPreferences("buttonChoice", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit().putBoolean("ChosenButton", false);
+                editor.apply();
                 startActivity(new Intent(MainActivity.this, CategoriesActivity.class));
             }
         });

@@ -109,7 +109,11 @@
 
     private void uploadFile() {
     //if there is a file to upload
-    if (filePath != null) {
+    if(filePath == null){
+        Toast.makeText(getApplicationContext(), "Image is mandatory",Toast.LENGTH_SHORT).show();
+    }
+
+    else if (filePath != null){
         //displaying a progress dialog while upload is going on
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Uploading");
