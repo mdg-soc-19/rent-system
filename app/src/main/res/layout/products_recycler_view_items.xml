@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+
+    <ImageView
+        android:id="@+id/image_view_product"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:padding="2dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/text_view_pName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/image_view_product"
+            android:layout_marginLeft="16dp"
+            android:padding="5dp"
+            android:text="Product Name"
+            android:textColor="@color/blue"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_view_pRentalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/image_view_product"
+            android:layout_below="@+id/text_view_pName"
+            android:layout_marginLeft="16dp"
+            android:padding="5dp"
+            android:text="Rental Price"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/text_view_pAvailabilityDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_view_pRentalPrice"
+            android:layout_toEndOf="@+id/image_view_product"
+            android:layout_marginLeft="16dp"
+            android:padding="5dp"
+            android:text="Availability Duration"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

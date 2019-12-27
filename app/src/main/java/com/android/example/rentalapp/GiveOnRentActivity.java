@@ -2,10 +2,8 @@
 
     import android.app.ProgressDialog;
     import android.content.Intent;
-    import android.graphics.Bitmap;
     import android.net.Uri;
     import android.os.Bundle;
-    import android.provider.MediaStore;
     import android.text.TextUtils;
     import android.view.View;
     import android.widget.Button;
@@ -21,12 +19,11 @@
     import com.google.firebase.auth.FirebaseAuth;
     import com.google.firebase.firestore.DocumentReference;
     import com.google.firebase.firestore.FirebaseFirestore;
-    import com.google.firebase.firestore.FirebaseFirestoreSettings;
     import com.google.firebase.storage.FirebaseStorage;
     import com.google.firebase.storage.StorageReference;
     import com.google.firebase.storage.UploadTask;
+    import com.squareup.picasso.Picasso;
 
-    import java.io.IOException;
     import java.util.HashMap;
     import java.util.Map;
     import java.util.UUID;
@@ -59,10 +56,6 @@
 
     fStore = FirebaseFirestore.getInstance();
 
-    FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
-            .setTimestampsInSnapshotsEnabled(true)
-            .build();
-    fStore.setFirestoreSettings(settings);
 
     storageReference = FirebaseStorage.getInstance().getReference();
 
@@ -97,14 +90,11 @@
     super.onActivityResult(requestCode, resultCode, data);
     if (requestCode == PICK_IMAGE_REQUEST && resultCode != RESULT_CANCELED && data != null && data.getData() != null) {
         filePath = data.getData();
-        try {
-            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-            productImage.setImageBitmap(bitmap);
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        Picasso.get().load(filePath).into(productImage);
+
+
         }
-    }
     }
 
     private void uploadFile() {
