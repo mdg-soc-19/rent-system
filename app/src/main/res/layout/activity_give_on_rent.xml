@@ -10,7 +10,7 @@
         android:id="@+id/product_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Product Details:"
+        android:text="Enter Product Details:"
         android:textSize="30sp"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginTop="16dp"

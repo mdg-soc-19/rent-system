@@ -20,10 +20,11 @@ public class Accessories_fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_accessories, container, false);
+        View view;
+        view = inflater.inflate(R.layout.fragment_accessories, container, false);
 
         String[] accessoriesMenuItems = {"Hats", "Goggles", "Watches", "Makeup", "Jewellery", "others"};
-        ListView listView = (ListView) view.findViewById(R.id.accessories_lv);
+        ListView listView = view.findViewById(R.id.accessories_lv);
 
         ArrayAdapter<String> accessoriesListViewAdapter = new ArrayAdapter<String>(
                 getActivity(),

@@ -1,5 +1,6 @@
 package com.android.example.rentalapp;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,26 +12,37 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
 public class ProductAdapter extends FirestoreRecyclerAdapter<ProductItem, ProductAdapter.ProductViewHolder> {
 
-
             public ProductAdapter(@NonNull FirestoreRecyclerOptions<ProductItem> options) {
-            super(options);
+                super(options);
+
         }
 
         @Override
         protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull ProductItem model) {
 
+            Picasso.get().load(model.getImage()).fit().into(holder.pImage);
+            holder.pName.setText( model.getProductName());
+            holder.pRentalPrice.setText("\u20B9" + " " + model.getRentalPrice());
+            holder.pTime.setText("Available for " + model.getAvailabilityDuration() + " days");
 
-            Picasso.get().load(model.getProductimage())
-                    .fit()
-                    .into(holder.pImage);
-            holder.pName.setText(model.getProductName());
-            holder.pRentalPrice.setText(model.getRentalPrice());
-            holder.pTime.setText(model.getTime());
-        }
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(v.getContext(), DetailsActivity.class);
+
+                    FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+                    DocumentReference ref = fStore.collection("products").document();
+                    i.putExtra("Product ID", ref.getId()); // passing the product ID to details activity
+                    v.getContext().startActivity(i);
+                }
+            });
+            }
 
         @NonNull
         @Override
@@ -52,6 +64,8 @@ public class ProductAdapter extends FirestoreRecyclerAdapter<ProductItem, Produc
                 pName = itemView.findViewById(R.id.text_view_pName);
                 pRentalPrice = itemView.findViewById(R.id.text_view_pRentalPrice);
                 pTime = itemView.findViewById(R.id.text_view_pAvailabilityDuration);
+
+
             }
         }
     }

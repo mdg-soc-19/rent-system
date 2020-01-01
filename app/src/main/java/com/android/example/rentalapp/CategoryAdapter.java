@@ -18,22 +18,23 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     private ArrayList<CategoryItem> mCategoryList;
 
-
     public static class CategoryViewHolder extends RecyclerView.ViewHolder{
-
 
         public ImageView mImageView;
         public TextView mTextView;
-
+        public SharedPreferences categoryAdapterPref;
 
 
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
 
-
                     itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                categoryAdapterPref = v.getContext().getSharedPreferences("category adapter position", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = categoryAdapterPref.edit().putInt("key", getAdapterPosition());
+                editor.apply();
 
                     SharedPreferences preferences = v.getContext().getSharedPreferences("buttonChoice", Context.MODE_PRIVATE);
 

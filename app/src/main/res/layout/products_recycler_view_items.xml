@@ -19,7 +19,7 @@
     <ImageView
         android:id="@+id/image_view_product"
         android:layout_width="150dp"
-        android:layout_height="120dp"
+        android:layout_height="180dp"
         android:padding="2dp"
         android:scaleType="centerCrop"
         android:layout_alignParentStart="true"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/image_view_product"
             android:layout_below="@+id/text_view_pName"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:padding="5dp"
             android:text="Rental Price"
             android:textColor="@color/black"

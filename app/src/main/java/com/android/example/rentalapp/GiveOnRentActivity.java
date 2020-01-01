@@ -55,8 +55,6 @@
     description = findViewById(R.id.description_et);
 
     fStore = FirebaseFirestore.getInstance();
-
-
     storageReference = FirebaseStorage.getInstance().getReference();
 
     //attaching listener
@@ -90,10 +88,7 @@
     super.onActivityResult(requestCode, resultCode, data);
     if (requestCode == PICK_IMAGE_REQUEST && resultCode != RESULT_CANCELED && data != null && data.getData() != null) {
         filePath = data.getData();
-
         Picasso.get().load(filePath).into(productImage);
-
-
         }
     }
 
@@ -153,14 +148,14 @@
                                 DocumentReference documentReference = fStore.collection("products").document();
 
                                 Map<String, Object> product = new HashMap<>();
-                                product.put("Product Name", ProductName);
-                                product.put("Image", imageurl.toString());
-                                product.put("Rental Price", RentalPrice);
-                                product.put("Security Cost", SecurityCost);
-                                product.put("Availability duration (days)", AvailabilityDuration);
-                                product.put("Description", Description);
-                                product.put("User ID", FirebaseAuth.getInstance().getCurrentUser().getUid());
-                                product.put("Category", CategoryName);
+                                product.put("productName", ProductName);
+                                product.put("image", imageurl.toString());
+                                product.put("rentalPrice", RentalPrice);
+                                product.put("securityCost", SecurityCost);
+                                product.put("availabilityDuration", AvailabilityDuration);
+                                product.put("description", Description);
+                                product.put("userID", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                product.put("category", CategoryName);
                                 documentReference.set(product).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
