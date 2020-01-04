@@ -16,20 +16,22 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
-public class ProductAdapter extends FirestoreRecyclerAdapter<ProductItem, ProductAdapter.ProductViewHolder> {
+public class ProductAdapter extends FirestoreRecyclerAdapter<product, ProductAdapter.ProductViewHolder> {
 
-            public ProductAdapter(@NonNull FirestoreRecyclerOptions<ProductItem> options) {
+            public ProductAdapter(@NonNull FirestoreRecyclerOptions<product> options) {
                 super(options);
 
         }
 
         @Override
-        protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull ProductItem model) {
+        protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull product productItem) {
 
-            Picasso.get().load(model.getImage()).fit().into(holder.pImage);
-            holder.pName.setText( model.getProductName());
-            holder.pRentalPrice.setText("\u20B9" + " " + model.getRentalPrice());
-            holder.pTime.setText("Available for " + model.getAvailabilityDuration() + " days");
+            Picasso.get().load(productItem.getImage()).fit().into(holder.pImage);
+            holder.pName.setText( productItem.getProductName());
+            holder.pRentalPrice.setText("\u20B9" + " " + productItem.getRentalPrice());
+            holder.pTime.setText("Available for " + productItem.getAvailabilityDuration() + " days");
+
+            final String id = getSnapshots().getSnapshot(position).getId();
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -38,7 +40,7 @@ public class ProductAdapter extends FirestoreRecyclerAdapter<ProductItem, Produc
 
                     FirebaseFirestore fStore = FirebaseFirestore.getInstance();
                     DocumentReference ref = fStore.collection("products").document();
-                    i.putExtra("Product ID", ref.getId()); // passing the product ID to details activity
+                    i.putExtra("Product ID", id); // passing the product ID to details activity
                     v.getContext().startActivity(i);
                 }
             });

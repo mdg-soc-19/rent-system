@@ -1,6 +1,7 @@
 package com.android.example.rentalapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,14 +56,11 @@ public class TakeOnRentActivity extends AppCompatActivity {
             else if (categoryAdapterPref.getInt("key", 0) == 2)
                 query = reference.whereEqualTo("category", "Accessories");
 
-
             else if (categoryAdapterPref.getInt("key", 0) == 3)
                 query = reference.whereEqualTo("category", "Books");
 
-
             else if (categoryAdapterPref.getInt("key", 0) == 4)
                 query = reference.whereEqualTo("category", "Gadgets");
-
 
             else if (categoryAdapterPref.getInt("key", 0) == 5)
                 query = reference.whereEqualTo("category", "Automobiles");
@@ -78,8 +76,8 @@ public class TakeOnRentActivity extends AppCompatActivity {
                     }
                 }
             });
-        FirestoreRecyclerOptions<ProductItem> options = new FirestoreRecyclerOptions.Builder<ProductItem>()
-                .setQuery(query, ProductItem.class)
+        FirestoreRecyclerOptions<product> options = new FirestoreRecyclerOptions.Builder<product>()
+                .setQuery(query, product.class)
                 .build();
 
 
@@ -89,19 +87,10 @@ public class TakeOnRentActivity extends AppCompatActivity {
 
         }
 
-
-
-
     @Override
     protected void onStart() {
         super.onStart();
         adapter.startListening();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        adapter.stopListening();
-
-    }
 }

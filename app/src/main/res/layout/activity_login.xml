@@ -21,10 +21,10 @@
         <ImageView
         android:id="@+id/logo_iv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/logo"
-        android:layout_marginTop="16dp"
-        android:layout_centerInParent="true"/>
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/banner"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
 

@@ -38,11 +38,11 @@
 
                     setContentView(R.layout.activity_login);
 
-                    login = (Button) findViewById(R.id.login_bn);
-                    signup = (TextView) findViewById(R.id.signup_tv);
-                    forgotPassword = (TextView) findViewById(R.id.forgotPassword_tv);
-                    email = (EditText) findViewById(R.id.email_et);
-                    password = (EditText) findViewById(R.id.password_et);
+                    login =  findViewById(R.id.login_bn);
+                    signup = findViewById(R.id.signup_tv);
+                    forgotPassword = findViewById(R.id.forgotPassword_tv);
+                    email = findViewById(R.id.email_et);
+                    password = findViewById(R.id.password_et);
 
                     auth = FirebaseAuth.getInstance();
 
