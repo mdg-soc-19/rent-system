@@ -31,6 +31,34 @@
     <string name="btn_sign_out">Sign Out</string>
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to send you password reset instructions.</string>
+    <string name="Rs">\u20B9</string>
+    <string name="about_us">
+        \nThe all new rentalApp is devoted to cater to the needs of all those who prefer renting things over buying them.
+    From small and simple accessories to large automobiles, rentalApp connects users to give and take anything and everything on rent.
+    Our app helps you find products on rent around you and makes renting process quite easy and efficient.
+
+    </string>
+
+    <string name="happy_renting">HAPPY RENTING!\n</string>
+
+    <string name="app_use">
+        How to use the rentalApp? \n\n
+        ->> For giving items on rent choose the category and upload the details of your product. Make sure to mention security cost and
+            all other necessary details to attract more and more buyers.\n
+        ->> For buying items on rent, we provide you with all the uploaded products of your chosen category along with the owner information
+            like city, contact number, email, etc. Just choose the product and connect with the owner to fix a deal.\n
+        ->> While signing up the users are requested to give valid credentials for smooth renting process.\n\n
+
+
+        For any queries, you can contact us at :\n
+        +91-9694066988\n
+        +91-9887066988\n
+        Or drop an email at ankitapareek2000@gmailcom\n\n
+    </string>
+
+    <string name="app_download">
+        So what are you waiting for? Just download the rentalApp now and make some great deals!\n\n\
+    </string>
 
     <string-array name="Clothes">
         <item>Men\'s fashion</item>
