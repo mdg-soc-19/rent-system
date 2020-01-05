@@ -57,7 +57,7 @@
                     }
 
 
-                    auth.sendPasswordResetEmail(Email)
+                    auth.sendPasswordResetEmail(email.getText().toString().trim())
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
