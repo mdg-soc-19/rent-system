@@ -1,12 +1,23 @@
 package com.android.example.rentalapp;
 
+import android.Manifest;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -20,9 +31,10 @@ public class DetailsActivity extends AppCompatActivity {
     private ImageView pImage;
     private TextView pName, pRentalPrice, pSecurityCost, pAvailabilityDuration, pDescrpition, oName, oEmail, oPhone,
                      oCity;
+    private ImageButton ConnectWithOwner_whatsapp, ConnectWithOwner_call;
     private String productID;
     private DocumentReference productReference, ownerReference;
-    private boolean zoomOut =  false;
+    private static final int REQUEST_PHONE_CALL = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +47,9 @@ public class DetailsActivity extends AppCompatActivity {
         pAvailabilityDuration = findViewById(R.id.availability_duration_tv);
         pDescrpition = findViewById(R.id.description_tv);
         pImage = findViewById(R.id.product_iv);
+
+        ConnectWithOwner_whatsapp = findViewById(R.id.oConnect_whatsapp_bn);
+        ConnectWithOwner_call = findViewById(R.id.oConnect_call_bn);
 
         oName = findViewById(R.id.owner_name_tv);
         oEmail = findViewById(R.id.owner_email_tv);
@@ -65,11 +80,25 @@ public class DetailsActivity extends AppCompatActivity {
                                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                     @Override
                                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                                        User owner = documentSnapshot.toObject(User.class);
+                                        final User owner = documentSnapshot.toObject(User.class);
                                         oName.setText("Name : " + owner.getName());
                                         oCity.setText("City : " + owner.getCity());
                                         oEmail.setText("Email : " + owner.getEmail());
                                         oPhone.setText("Contact Number : " + owner.getContactNo());
+
+                                        ConnectWithOwner_whatsapp.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                openWhatsappContact(owner.getContactNo());
+                                            }
+                                        });
+
+                                        ConnectWithOwner_call.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                setConnectWithOwner_call(owner.getContactNo());
+                                            }
+                                        });
                                     }
                                 });
                     }
@@ -80,5 +109,26 @@ public class DetailsActivity extends AppCompatActivity {
                 Toast.makeText(DetailsActivity.this, "Product details not available", Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
-}
+
+    void openWhatsappContact(String number) {
+        Uri uri = Uri.parse("smsto:" + number);
+        Intent i = new Intent(Intent.ACTION_SENDTO, uri);
+        i.setPackage("com.whatsapp");
+        startActivity(Intent.createChooser(i, ""));
+    }
+
+    void setConnectWithOwner_call(String phone) {
+        if (ContextCompat.checkSelfPermission(DetailsActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(DetailsActivity.this, new String[]{Manifest.permission.CALL_PHONE},REQUEST_PHONE_CALL);
+        }
+        else {
+            Intent callIntent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+            startActivity(callIntent);
+        }
+
+        }
+    }
+

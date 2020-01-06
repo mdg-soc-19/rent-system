@@ -117,7 +117,7 @@ package com.android.example.rentalapp;
                                             user.put("Name", Username);
                                             user.put("Email", Email);
                                             user.put("City", City);
-                                            user.put("Contact No.", Phone);
+                                            user.put("ContactNo", Phone);
                                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
