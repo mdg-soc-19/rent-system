@@ -1,19 +1,20 @@
 package com.android.example.rentalapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -66,24 +67,33 @@ public class TakeOnRentActivity extends AppCompatActivity {
                 query = reference.whereEqualTo("category", "Automobiles");
 
 
-            query.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                @Override
-                public void onSuccess(QuerySnapshot querySnapshots) {
-                    if (querySnapshots.isEmpty()) {
-                        Log.d(TAG, "List empty");
-                    } else {
-                        Log.d(TAG, "List retrieved");
-                    }
+            query.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot snapshots, @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    Log.w("TAG", "listen:error", e);
+
                 }
-            });
+
+//                for (DocumentChange doc : snapshots.getDocumentChanges()) {
+//                    if (doc.getType() == DocumentChange.Type.ADDED) {
+//
+//                            Log.d("TAG", "New Msg: " + doc.getDocument().toObject(product.class));
+//                    }
+//                }
+
+            }
+        });
+
+
         FirestoreRecyclerOptions<product> options = new FirestoreRecyclerOptions.Builder<product>()
                 .setQuery(query, product.class)
                 .build();
 
 
         adapter = new ProductAdapter(options);
+        adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
-
 
         }
 

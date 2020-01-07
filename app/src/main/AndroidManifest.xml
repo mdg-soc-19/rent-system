@@ -33,7 +33,9 @@
         <activity
             android:name=".CategoriesActivity"
             android:configChanges="orientation"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:label="Categories"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ResetPasswordActivity"
