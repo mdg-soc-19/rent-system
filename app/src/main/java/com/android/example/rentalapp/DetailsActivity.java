@@ -26,7 +26,7 @@ import com.squareup.picasso.Picasso;
 public class DetailsActivity extends AppCompatActivity {
 
     private ImageView pImage;
-    private TextView pName, pRentalPrice, pSecurityCost, pAvailabilityDuration, pDescrpition, oName, oEmail, oPhone,
+    private TextView pName, pCategory, pRentalPrice, pSecurityCost, pAvailabilityDuration, pDescrpition, oName, oEmail, oPhone,
                      oCity;
     private ImageButton ConnectWithOwner_whatsapp, ConnectWithOwner_call;
     private String productID;
@@ -39,6 +39,7 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
 
         pName = findViewById(R.id.product_name_tv);
+        pCategory = findViewById(R.id.category_tv);
         pRentalPrice = findViewById(R.id.rental_price_tv);
         pSecurityCost = findViewById(R.id.security_cost_tv);
         pAvailabilityDuration = findViewById(R.id.availability_duration_tv);
@@ -65,6 +66,7 @@ public class DetailsActivity extends AppCompatActivity {
 
                         Picasso.get().load(productObject.getImage()).fit().into(pImage);
                         pName.setText(productObject.getProductName());
+                        pCategory.setText("Category - " + productObject.getCategory());
                         pRentalPrice.setText("Rental Price - " + "\u20B9" + productObject.getRentalPrice());
                         pSecurityCost.setText("Security Cost - " + "\u20B9" + productObject.getSecurityCost());
                         pAvailabilityDuration.setText("Availability duration - " + productObject.getAvailabilityDuration() + " days");

@@ -92,9 +92,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(MainActivity.this, HelpActivity.class));
                 break;
 
-//            case R.id.nav_settings:
-//                Toast.makeText(MainActivity.this, "Settings Selected", Toast.LENGTH_SHORT).show();
-//                break;
+            case R.id.nav_my_uploads:
+                startActivity(new Intent(MainActivity.this, MyUploadsActivity.class));
+                break;
+
+           case R.id.nav_settings:
+                Toast.makeText(MainActivity.this, "Settings Selected", Toast.LENGTH_SHORT).show();
+                break;
 
             case R.id.nav_signout:
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));

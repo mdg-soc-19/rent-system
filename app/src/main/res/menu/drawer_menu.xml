@@ -13,6 +13,11 @@
             android:icon="@drawable/ic_help"
             android:title="Help"/>
 
+        <item android:id="@+id/nav_my_uploads"
+            android:title="My Uploads"
+            android:icon="@drawable/ic_my_uploads"/>
+
+
     </group>
 
     <item android:title="Controls">
@@ -20,9 +25,10 @@
             <item android:id="@+id/nav_signout"
                 android:icon="@drawable/ic_signout"
                 android:title="Signout"/>
-<!--            <item android:id="@+id/nav_settings"-->
-<!--                android:icon="@drawable/ic_settings"-->
-<!--                android:title="Settings"/>-->
+
+            <item android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="Settings"/>
         </menu>
 
         </item>

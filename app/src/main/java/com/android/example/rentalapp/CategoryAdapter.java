@@ -18,14 +18,14 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     private ArrayList<CategoryItem> mCategoryList;
 
-    public static class CategoryViewHolder extends RecyclerView.ViewHolder{
+     static class CategoryViewHolder extends RecyclerView.ViewHolder{
 
-        public ImageView mImageView;
-        public TextView mTextView;
-        public SharedPreferences categoryAdapterPref;
+         ImageView mImageView;
+         TextView mTextView;
+         SharedPreferences categoryAdapterPref;
 
 
-        public CategoryViewHolder(@NonNull View itemView) {
+         CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
 
                     itemView.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +76,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         }
     }
 
-    public CategoryAdapter(ArrayList<CategoryItem> categoryList){
+     CategoryAdapter(ArrayList<CategoryItem> categoryList){
         mCategoryList = categoryList;
     }
 

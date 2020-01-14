@@ -18,9 +18,8 @@ import com.squareup.picasso.Picasso;
 
 public class ProductAdapter extends FirestoreRecyclerAdapter<product, ProductAdapter.ProductViewHolder> {
 
-            public ProductAdapter(@NonNull FirestoreRecyclerOptions<product> options) {
+             ProductAdapter(@NonNull FirestoreRecyclerOptions<product> options) {
                 super(options);
-
         }
 
         @Override
@@ -59,15 +58,12 @@ public class ProductAdapter extends FirestoreRecyclerAdapter<product, ProductAda
             private TextView pName, pRentalPrice, pTime;
 
 
-
             private ProductViewHolder(View itemView) {
                 super(itemView);
-                pImage = itemView.findViewById(R.id.image_view_product);
-                pName = itemView.findViewById(R.id.text_view_pName);
-                pRentalPrice = itemView.findViewById(R.id.text_view_pRentalPrice);
-                pTime = itemView.findViewById(R.id.text_view_pAvailabilityDuration);
-
-
+                pImage = itemView.findViewById(R.id.image_view);
+                pName = itemView.findViewById(R.id.text_view_1);
+                pRentalPrice = itemView.findViewById(R.id.text_view_2);
+                pTime = itemView.findViewById(R.id.text_view_3);
             }
         }
     }

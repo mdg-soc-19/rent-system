@@ -7,19 +7,19 @@ public class User {
     public User() {
     }
 
-    public String getContactNo() {
+     public String getContactNo() {
         return ContactNo;
     }
 
-    public String getName() {
+     public String getName() {
         return Name;
     }
 
-    public String getEmail() {
+     public String getEmail() {
         return Email;
     }
 
-    public String getCity() {
+     public String getCity() {
         return City;
     }
 }

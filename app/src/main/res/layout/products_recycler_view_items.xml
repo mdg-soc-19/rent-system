@@ -17,7 +17,7 @@
         android:layout_margin="20dp">
 
     <ImageView
-        android:id="@+id/image_view_product"
+        android:id="@+id/image_view"
         android:layout_width="150dp"
         android:layout_height="180dp"
         android:padding="2dp"
@@ -26,39 +26,36 @@
         android:layout_alignParentTop="true"/>
 
         <TextView
-            android:id="@+id/text_view_pName"
+            android:id="@+id/text_view_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/image_view_product"
-            android:layout_marginLeft="16dp"
+            android:layout_toEndOf="@+id/image_view"
+            android:layout_marginStart="16dp"
             android:padding="5dp"
-            android:text="Product Name"
             android:textColor="@color/blue"
             android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/text_view_pRentalPrice"
+            android:id="@+id/text_view_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/image_view_product"
-            android:layout_below="@+id/text_view_pName"
+            android:layout_toEndOf="@+id/image_view"
+            android:layout_below="@+id/text_view_1"
             android:layout_marginStart="16dp"
             android:padding="5dp"
-            android:text="Rental Price"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/text_view_pAvailabilityDuration"
+            android:id="@+id/text_view_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_view_pRentalPrice"
-            android:layout_toEndOf="@+id/image_view_product"
-            android:layout_marginLeft="16dp"
+            android:layout_below="@+id/text_view_2"
+            android:layout_toEndOf="@+id/image_view"
+            android:layout_marginStart="16dp"
             android:padding="5dp"
-            android:text="Availability Duration"
             android:textColor="@color/black"
             android:textSize="20sp"/>
 

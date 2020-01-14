@@ -54,7 +54,7 @@ import java.util.Map;
             contactNo =  findViewById(R.id.phone_et);
 
 
-            signup = (Button) findViewById(R.id.signup_bn);
+            signup = findViewById(R.id.signup_bn);
 
             signup.setOnClickListener(new View.OnClickListener() {
                 @Override
