@@ -18,9 +18,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.squareup.picasso.Picasso;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.annotation.Nullable;
 
 public class UploadsEditActivity extends AppCompatActivity {
@@ -30,6 +27,7 @@ public class UploadsEditActivity extends AppCompatActivity {
     private String productID;
     private Button SaveChanges;
     private DocumentReference productReference;
+    product productItem = new product();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,24 +56,21 @@ public class UploadsEditActivity extends AppCompatActivity {
                             return;
                         }
                         if (documentSnapshot != null && documentSnapshot.exists()) {
-
+                            Log.i("Document", "exists");
                             product productObject = documentSnapshot.toObject(product.class);
 
                             Picasso.get().load(productObject.getImage()).fit().into(pImage);
                             pName.setText(productObject.getProductName());
-                            pCategory.setText("Category - " + productObject.getCategory());
-                            pRentalPrice.setText("Rental Price - " + "\u20B9" + productObject.getRentalPrice());
-                            pSecurityCost.setText("Security Cost - " + "\u20B9" + productObject.getSecurityCost());
-                            pAvailabilityDuration.setText("Availability duration - " + productObject.getAvailabilityDuration() + " days");
-                            pDescrpition.setText("Description - " + productObject.getDescription());
+                            pCategory.setText( productObject.getCategory());
+                            pRentalPrice.setText( productObject.getRentalPrice());
+                            pSecurityCost.setText( productObject.getSecurityCost());
+                            pAvailabilityDuration.setText( productObject.getAvailabilityDuration() );
+                            pDescrpition.setText( productObject.getDescription());
                         }
                     }
 
 
-                });
-
-
-
+                }); // Add Snapshot listener ends here
 
         SaveChanges.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,24 +86,24 @@ public class UploadsEditActivity extends AppCompatActivity {
         productID = getIntent().getStringExtra("Product ID"); // getting the product ID and using it to retrieve product details
         productReference = FirebaseFirestore.getInstance().collection("products").document(productID);
 
-        productReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                productItem.setProductName(pName.getText().toString().trim());
+                productItem.setAvailabilityDuration(pAvailabilityDuration.getText().toString().trim());
+                productItem.setCategory(pCategory.getText().toString().trim());
+                productItem.setDescription(pDescrpition.getText().toString().trim());
+                productItem.setRentalPrice(pRentalPrice.getText().toString().trim());
+                productItem.setSecurityCost(pSecurityCost.getText().toString().trim());
+        Log.i("Rental Price", productItem.getRentalPrice());
+        productReference.update(
+                        "rentalPrice", productItem.getRentalPrice(),
+                        "securityCost", productItem.getSecurityCost(),
+                        "productName", productItem.getProductName(),
+                        "category", productItem.getCategory(),
+                        "description", productItem.getDescription(),
+                        "availabilityDuration" , productItem.getAvailabilityDuration()
+        ).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                Map<String, Object> product = new HashMap<>();
-                product.put("productName", pName.getText().toString().trim());
-                product.put("rentalPrice", pRentalPrice.getText().toString().trim());
-                product.put("securityCost", pSecurityCost.getText().toString().trim());
-                product.put("availabilityDuration", pAvailabilityDuration.getText().toString().trim());
-                product.put("description",pDescrpition.getText().toString().trim());
-                product.put("category", pCategory.getText().toString().trim());
-                productReference.set(product).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        //if the upload is successfull
-                        //we display a success toast
-                        Toast.makeText(getApplicationContext(), "File Uploaded ", Toast.LENGTH_LONG).show();
-                    }
-                });
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(UploadsEditActivity.this, "Product Updated", Toast.LENGTH_SHORT).show();
             }
         });
 

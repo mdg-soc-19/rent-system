@@ -4,7 +4,7 @@
     tools:showIn="navigation_view"
     android:checkableBehavior="single">
 
-    <group >
+
         <item android:id="@+id/nav_profile"
             android:icon="@drawable/ic_user_account"
             android:title="My Profile"/>
@@ -17,20 +17,8 @@
             android:title="My Uploads"
             android:icon="@drawable/ic_my_uploads"/>
 
-
-    </group>
-
-    <item android:title="Controls">
-        <menu>
-            <item android:id="@+id/nav_signout"
+        <item android:id="@+id/nav_signout"
                 android:icon="@drawable/ic_signout"
                 android:title="Signout"/>
-
-            <item android:id="@+id/nav_settings"
-                android:icon="@drawable/ic_settings"
-                android:title="Settings"/>
-        </menu>
-
-        </item>
 
 </menu>

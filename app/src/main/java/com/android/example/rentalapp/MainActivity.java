@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private FirebaseAuth auth;
-    private Button logout, GiveOnRent, TakeOnRent;
+    private Button GiveOnRent, TakeOnRent;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
@@ -94,10 +94,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_my_uploads:
                 startActivity(new Intent(MainActivity.this, MyUploadsActivity.class));
-                break;
-
-           case R.id.nav_settings:
-                Toast.makeText(MainActivity.this, "Settings Selected", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.nav_signout:
