@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.example.rentalapp">
+    package="in.ac.iitr.mdg.rentalapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -11,10 +11,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UploadsEditActivity"></activity>
+
+        <activity android:name=".UploadsEditActivity"
+            android:label="MyUploadedProduct"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".MyUploadsActivity"
-            android:label="My Uploads" />
+            android:label="My Uploads"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".HelpActivity"
             android:label="Help"
