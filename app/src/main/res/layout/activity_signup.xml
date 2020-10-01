@@ -5,12 +5,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".SignupActivity">
+    tools:context=".rentalapp.SignupActivity">
 
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupActivity"
+    tools:context="com.android.example.rentalapp.in.android.example.rentalapp.SignupActivity"
     android:backgroundTint="@color/white"
     android:orientation="vertical">
 
@@ -30,12 +30,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/logo_iv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/banner"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_iv"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
             android:layout_margin="20dp"
+            android:src="@drawable/profile_image"
             android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

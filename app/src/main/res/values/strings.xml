@@ -42,22 +42,26 @@
     <string name="happy_renting">HAPPY RENTING!\n</string>
 
     <string name="app_use">
-        How to use the rentalApp? \n\n
+        How to use the rentalApp? \n\n\n
         ->> For giving items on rent choose the category and upload the details of your product. Make sure to mention security cost and
-            all other necessary details to attract more and more buyers.\n
+            all other necessary details to attract more and more buyers.\n\n
         ->> For buying items on rent, we provide you with all the uploaded products of your chosen category along with the owner information
-            like city, contact number, email, etc. Just choose the product and connect with the owner to fix a deal.\n
+            like city, contact number, email, etc. Just choose the product and connect with the owner via whatsApp or
+            phone to fix a deal.\n\n
+        ->> In case you want to edit the details of your uploaded product, just go to MyUploads section and edit the details as
+            required.\n\n
         ->> While signing up the users are requested to give valid credentials for smooth renting process.\n\n
 
 
         For any queries, you can contact us at :\n
         +91-9694066988\n
         +91-9887066988\n
-        Or drop an email at ankitapareek2000@gmailcom\n\n
+        Or drop an email at ankitapareek2000@gmail.com\n\n
     </string>
 
     <string name="app_download">
-        So what are you waiting for? Just download the rentalApp now and make some great deals!\n\n\
+        So what are you waiting for?\n
+        Just use and recommend the rentalApp now and make some great deals!\n\n\
     </string>
 
     <string-array name="Clothes">

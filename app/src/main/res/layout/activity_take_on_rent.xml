@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@+id/product_fragment_fl"
-    android:layout_height="match_parent"
+<RelativeLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_gravity="end">
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/products_rv"
@@ -12,4 +12,4 @@
         android:padding="5dp"
         android:scrollbars="vertical"/>
 
-</FrameLayout>
+</RelativeLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".rentalapp.UploadsEditActivity"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp">
+
+
+
+        <ImageView
+            android:id="@+id/product_iv"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/product_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/product_iv"
+            android:layout_margin="10dp"
+            android:text=" Product Name : "
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/product_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/product_iv"
+            android:layout_toEndOf="@+id/product_name_tv"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/category_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/product_name_tv"
+            android:layout_margin="10dp"
+            android:text=" Category : "
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/category_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_below="@id/product_name_et"
+            android:layout_toEndOf="@+id/category_tv"/>
+
+        <TextView
+            android:id="@+id/rental_price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/category_tv"
+            android:layout_margin="10dp"
+            android:text=" Rental Price (in ₹) : "
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/rental_price_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_below="@+id/category_et"
+            android:layout_toEndOf="@+id/rental_price_tv"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/security_cost_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rental_price_tv"
+            android:layout_margin="10dp"
+            android:text=" Security Cost (in ₹) : "
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/security_cost_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_below="@+id/rental_price_et"
+            android:layout_toEndOf="@+id/security_cost_tv"/>
+
+        <TextView
+            android:id="@+id/availability_duration_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/security_cost_tv"
+            android:layout_margin="10dp"
+            android:text=" Availability Duration (days): "
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/availability_duration_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_toEndOf="@+id/availability_duration_tv"
+            android:layout_below="@+id/security_cost_et"/>
+
+        <TextView
+            android:id="@+id/description_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/availability_duration_tv"
+            android:layout_margin="10dp"
+            android:text=" Description : "
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/description_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_below="@+id/availability_duration_et"
+            android:layout_toEndOf="@+id/description_tv"/>
+
+        <Button
+            android:id="@+id/save_changes_bn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:text="Save changes"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/description_et"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"/>
+
+
+
+    </RelativeLayout>
+</ScrollView>

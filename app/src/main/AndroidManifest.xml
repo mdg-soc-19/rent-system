@@ -1,58 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.example.rentalapp">
+    package="in.ac.iitr.mdg.rentalapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
+        android:icon="@drawable/banner"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:icon="@drawable/banner">
+        android:theme="@style/AppTheme">
 
-        <activity android:name=".HelpActivity"
-            android:screenOrientation="portrait"
-            android:label="Help"></activity>
-
-        <activity android:name=".MyProfileActivity"
-            android:screenOrientation="portrait"
-            android:label="My Profile"/>
-
-        <activity android:name=".DetailsActivity"
-            android:screenOrientation="portrait"
-            android:label="Product Details"/>
-
-        <activity android:name=".TakeOnRentActivity"
-            android:screenOrientation="portrait" />
-
-        <activity android:name=".GiveOnRentActivity"
+        <activity android:name=".UploadsEditActivity"
+            android:label="MyUploadedProduct"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".MyUploadsActivity"
+            android:label="My Uploads"
             android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".HelpActivity"
+            android:label="Help"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyProfileActivity"
+            android:label="My Profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DetailsActivity"
+            android:label="Product Details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TakeOnRentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GiveOnRentActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CategoriesActivity"
             android:configChanges="orientation"
+            android:label="Categories"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".ResetPasswordActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".SignupActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".LoginActivity"
             android:configChanges="orientation"
